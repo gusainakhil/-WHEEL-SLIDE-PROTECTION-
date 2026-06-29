@@ -8,8 +8,7 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
     <!-- Bootstrap Icons -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.0/font/bootstrap-icons.min.css" rel="stylesheet">
-    <!-- Chart.js -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
+
     <!-- Custom CSS -->
     <link href="assets/css/styles.css" rel="stylesheet">
 </head>
@@ -101,6 +100,7 @@
                         <label class="form-label-custom" for="reportTrain">Select Train</label>
                         <select id="reportTrain" class="form-control-custom">
                             <option value="all">All Trains</option>
+                            <option value="21010">21010 - Delhi Express</option>
                             <option value="12002">12002 - NDLS Shatabdi</option>
                             <option value="12952">12952 - Mumbai Rajdhani</option>
                             <option value="12056">12056 - Dehradun Jan Shatabdi</option>
@@ -122,100 +122,123 @@
         </div>
     </div>
 
-    <!-- Preview Graphs -->
-    <div class="row g-3">
-        <div class="col-md-6">
-            <div class="content-card">
-                <div class="card-header">
-                    <h5><i class="bi bi-bar-chart-line"></i> Protection Actuations By Train</h5>
-                </div>
-                <div class="card-body">
-                    <div style="height: 220px; position: relative;">
-                        <canvas id="actuationsChart"></canvas>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-6">
-            <div class="content-card">
-                <div class="card-header">
-                    <h5><i class="bi bi-graph-down-arrow"></i> Average Wheel Condition Index</h5>
-                </div>
-                <div class="card-body">
-                    <div style="height: 220px; position: relative;">
-                        <canvas id="conditionChart"></canvas>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+
 
     <!-- Generated Report Data Preview -->
-    <div class="content-card mt-1">
-        <div class="card-header">
-            <h5><i class="bi bi-table"></i> Report Summary Preview: <span id="reportTitleSpan">Daily Protection Summary</span></h5>
-            <span class="text-muted" style="font-size: 11px;" id="reportPeriodSpan">Period: 01-Jun-2026 to 25-Jun-2026</span>
+    <div class="content-card mt-3">
+        <!-- Gold Attention Paid Header Banner -->
+        <div class="text-center py-2 fw-bold text-dark mb-1" style="background-color: #FFC107; font-size: 15px; letter-spacing: 0.5px; border-radius: 4px; border: 1px solid #e0a800; font-family: 'Inter', sans-serif;">
+            WSPS COMPONENT DIAGNOSTIC & RESOLUTION REPORT @ DEPOT
         </div>
-        <div class="card-body p-0">
+        <div class="d-flex justify-content-between align-items-center px-3 py-1 bg-light border border-bottom-0 text-muted" style="font-size: 11px; font-weight: 500; font-family: 'Inter', sans-serif; border-radius: 4px 4px 0 0;">
+            <div id="recordCountSpan"><i class="bi bi-list-ol"></i> 4 records</div>
+            <div id="reportPeriodSpan">01.06.2026 - 29.06.2026</div>
+        </div>
+        <div class="card-body p-0 border" style="border-radius: 0 0 4px 4px;">
             <div class="table-responsive-custom">
-                <table class="table-custom" id="reportPreviewTable">
-                    <thead>
+                <table class="table-custom report-format-table" id="reportPreviewTable" style="font-size: 11px; margin-bottom: 0;">
+                    <thead style="background-color: #f8f9fa;">
                         <tr>
-                            <th>Train No</th>
-                            <th>Coach No</th>
-                            <th>Total Slip Events</th>
-                            <th>Solenoid Exhausts</th>
-                            <th>Avg Slip Speed Delta</th>
-                            <th>Max Slip Duration</th>
-                            <th>Critical Warnings</th>
-                            <th>Sensor Faults</th>
-                            <th>Protection Health Index</th>
+                            <th style="width: 40px; text-align: center;">SL.</th>
+                            <th style="width: 80px; text-align: center;">Date</th>
+                            <th style="width: 100px;">Train No.</th>
+                            <th style="width: 130px;">Type & Coach No.</th>
+                            <th style="width: 120px;">OEM Make</th>
+                            <th>Inventory Issue / Fault & Error Code</th>
+                            <th>What Could Have Been Done (Remedies)</th>
+                            <th>What We Did (Action Taken)</th>
+                            <th style="width: 100px; text-align: center;">Status</th>
+                            <th style="width: 130px;">Auditor</th>
                         </tr>
                     </thead>
                     <tbody id="reportTbody">
                         <tr>
-                            <td><strong>12002 - Shatabdi</strong></td>
-                            <td>CR-223456</td>
-                            <td class="text-center">14</td>
-                            <td class="text-center">56 pulses</td>
-                            <td>12.4 km/h</td>
-                            <td>880 ms</td>
-                            <td class="text-center text-danger fw-bold">1</td>
-                            <td class="text-center">0</td>
-                            <td class="fw-bold text-success">98.5%</td>
+                            <td class="text-center fw-bold">1</td>
+                            <td class="text-center">23.06.2026</td>
+                            <td><strong>12002</strong><br><small class="text-muted" style="font-size:9px;">SHATABDI EXP</small></td>
+                            <td>TYPE <strong>LHB AC 3T</strong><br><small class="text-muted">COACH </small><strong>CR-223456</strong></td>
+                            <td>Faiveley Transport</td>
+                            <td>
+                                <strong>Main Board MB04B-A1 Defect</strong><br>
+                                <span class="text-muted">Internal board error</span><br>
+                                <span class="badge bg-danger text-white" style="font-size: 9px; padding: 2px 4px; font-family: monospace;">ERROR: 0101</span>
+                            </td>
+                            <td>Verify board seating, clean input contacts, or replace Main Board MB04B-A1</td>
+                            <td>Replaced Main Board MB04B-A1 with spare from inventory depot</td>
+                            <td class="text-center"><span class="badge bg-success text-white" style="font-size: 9px; padding: 4px 6px; background-color: #198754 !important;">RESOLVED</span></td>
+                            <td>
+                                <div style="font-size: 10px; line-height: 1.3;">
+                                    <strong>akhil golu</strong><br>
+                                    <span class="text-muted">SCH</span> <strong>#WO-10101</strong><br>
+                                    <span class="text-muted">20.06.2026</span>
+                                </div>
+                            </td>
                         </tr>
                         <tr>
-                            <td><strong>12952 - Rajdhani</strong></td>
-                            <td>WR-193425</td>
-                            <td class="text-center">28</td>
-                            <td class="text-center">112 pulses</td>
-                            <td>14.1 km/h</td>
-                            <td>1,240 ms</td>
-                            <td class="text-center">0</td>
-                            <td class="text-center text-danger fw-bold">1</td>
-                            <td class="fw-bold text-warning">94.2%</td>
+                            <td class="text-center fw-bold">2</td>
+                            <td class="text-center">15.06.2026</td>
+                            <td><strong>12952</strong><br><small class="text-muted" style="font-size:9px;">RAJDHANI EXP</small></td>
+                            <td>TYPE <strong>LHB AC 2T</strong><br><small class="text-muted">COACH </small><strong>WR-193425</strong></td>
+                            <td>Knorr-Bremse</td>
+                            <td>
+                                <strong>Solenoid dump valve timeout</strong><br>
+                                <span class="text-muted">Axle 1 response failure</span><br>
+                                <span class="badge bg-warning text-dark" style="font-size: 9px; padding: 2px 4px; font-family: monospace;">ERROR: 1001</span>
+                            </td>
+                            <td>Start pneumatic self-test, verify track adhesion coefficient, clean dump valve assembly</td>
+                            <td>Executed pneumatic self-test, cleared dump valve nozzle blockage</td>
+                            <td class="text-center"><span class="badge bg-success text-white" style="font-size: 9px; padding: 4px 6px; background-color: #198754 !important;">RESOLVED</span></td>
+                            <td>
+                                <div style="font-size: 10px; line-height: 1.3;">
+                                    <strong>akhil golu</strong><br>
+                                    <span class="text-muted">SCH</span> <strong>#WO-10102</strong><br>
+                                    <span class="text-muted">13.06.2026</span>
+                                </div>
+                            </td>
                         </tr>
                         <tr>
-                            <td><strong>12056 - Jan Shatabdi</strong></td>
-                            <td>NR-142211</td>
-                            <td class="text-center">6</td>
-                            <td class="text-center">24 pulses</td>
-                            <td>8.5 km/h</td>
-                            <td>420 ms</td>
-                            <td class="text-center">0</td>
-                            <td class="text-center">0</td>
-                            <td class="fw-bold text-success">99.8%</td>
+                            <td class="text-center fw-bold">3</td>
+                            <td class="text-center">15.06.2026</td>
+                            <td><strong>12056</strong><br><small class="text-muted" style="font-size:9px;">JAN SHATABDI</small></td>
+                            <td>TYPE <strong>LHB GEN</strong><br><small class="text-muted">COACH </small><strong>NR-142211</strong></td>
+                            <td>Medha Servo</td>
+                            <td>
+                                <strong>Extension Board EB01A-A2 Fault</strong><br>
+                                <span class="text-muted">Internal board error</span><br>
+                                <span class="badge bg-danger text-white" style="font-size: 9px; padding: 2px 4px; font-family: monospace;">ERROR: 0202</span>
+                            </td>
+                            <td>Check standby power lines, inspect EB01A-A2 card components, change board if necessary</td>
+                            <td>Awaiting spare Extension Board EB01A-A2 from division depot</td>
+                            <td class="text-center"><span class="badge bg-warning text-dark" style="font-size: 9px; padding: 4px 6px; background-color: #ffc107 !important;">PENDING</span></td>
+                            <td>
+                                <div style="font-size: 10px; line-height: 1.3;">
+                                    <strong>akhil golu</strong><br>
+                                    <span class="text-muted">SCH</span> <strong>#WO-10103</strong><br>
+                                    <span class="text-muted">13.06.2026</span>
+                                </div>
+                            </td>
                         </tr>
                         <tr>
-                            <td><strong>12260 - Duronto Exp</strong></td>
-                            <td>ER-202115</td>
-                            <td class="text-center">8</td>
-                            <td class="text-center">32 pulses</td>
-                            <td>9.8 km/h</td>
-                            <td>610 ms</td>
-                            <td class="text-center">0</td>
-                            <td class="text-center">0</td>
-                            <td class="fw-bold text-success">99.5%</td>
+                            <td class="text-center fw-bold">4</td>
+                            <td class="text-center">14.06.2026</td>
+                            <td><strong>12260</strong><br><small class="text-muted" style="font-size:9px;">DURONTO EXP</small></td>
+                            <td>TYPE <strong>LHB AC 3T</strong><br><small class="text-muted">COACH </small><strong>ER-202115</strong></td>
+                            <td>Escorts Ltd</td>
+                            <td>
+                                <strong>Speed Sensor Open/Short circuit</strong><br>
+                                <span class="text-muted">Axle 1 signal drop detection</span><br>
+                                <span class="badge bg-warning text-dark" style="font-size: 9px; padding: 2px 4px; font-family: monospace;">ERROR: 1101</span>
+                            </td>
+                            <td>Check sensor plug connection, measure coil resistance (800-1200 ohms), replace speed sensor</td>
+                            <td>Cleaned speed sensor connector contacts and refastened plug</td>
+                            <td class="text-center"><span class="badge bg-success text-white" style="font-size: 9px; padding: 4px 6px; background-color: #198754 !important;">RESOLVED</span></td>
+                            <td>
+                                <div style="font-size: 10px; line-height: 1.3;">
+                                    <strong>akhil golu</strong><br>
+                                    <span class="text-muted">SCH</span> <strong>#WO-10104</strong><br>
+                                    <span class="text-muted">13.06.2026</span>
+                                </div>
+                            </td>
                         </tr>
                     </tbody>
                 </table>
@@ -227,58 +250,80 @@
 <?php include 'includes/footer.php'; ?>
 
 <script>
-    // 1. Actuations Chart
-    const actuCtx = document.getElementById('actuationsChart').getContext('2d');
-    const actuChart = new Chart(actuCtx, {
-        type: 'bar',
-        data: {
-            labels: ['12002 Shatabdi', '12952 Rajdhani', '12056 Jan Shatabdi', '12260 Duronto'],
-            datasets: [{
-                label: 'Solenoid protection Cycles',
-                data: [56, 112, 24, 32],
-                backgroundColor: ['#0B4F8A', '#2F6DA6', '#198754', '#8c7512'],
-                borderWidth: 0
-            }]
-        },
-        options: {
-            responsive: true,
-            maintainAspectRatio: false,
-            plugins: { legend: { display: false } },
-            scales: {
-                y: { beginAtZero: true, ticks: { font: { family: 'Inter', size: 10 } } },
-                x: { ticks: { font: { family: 'Inter', size: 10 } } }
-            }
-        }
-    });
 
-    // 2. Wheel Condition Chart
-    const condCtx = document.getElementById('conditionChart').getContext('2d');
-    const condChart = new Chart(condCtx, {
-        type: 'line',
-        data: {
-            labels: ['01-Jun', '05-Jun', '10-Jun', '15-Jun', '20-Jun', '25-Jun'],
-            datasets: [{
-                label: 'Avg Wear Index %',
-                data: [99.5, 99.1, 98.7, 98.2, 97.9, 97.8],
-                borderColor: '#198754',
-                backgroundColor: 'rgba(25, 135, 84, 0.05)',
-                borderWidth: 2,
-                fill: true,
-                tension: 0.1
-            }]
-        },
-        options: {
-            responsive: true,
-            maintainAspectRatio: false,
-            plugins: { legend: { display: false } },
-            scales: {
-                y: { min: 95, max: 100, ticks: { font: { family: 'Inter', size: 10 } } },
-                x: { ticks: { font: { family: 'Inter', size: 10 } } }
-            }
-        }
-    });
 
     // Report Generator Simulation
+    const allReportRows = [
+        {
+            sl: 1,
+            date: '23.06.2026',
+            trainId: '12002',
+            trainNo: '12002',
+            trainName: 'SHATABDI EXP',
+            coachType: 'LHB AC 3T',
+            coachNo: 'CR-223456',
+            make: 'Faiveley Transport',
+            issue: '<strong>Main Board MB04B-A1 Defect</strong><br><span class="text-muted">Internal board error</span><br><span class="badge bg-danger" style="font-size: 9px; padding: 2px 4px; font-family: monospace;">ERROR: 0101</span>',
+            rec: 'Verify board seating, clean input contacts, or replace Main Board MB04B-A1',
+            done: 'Replaced Main Board MB04B-A1 with spare from inventory depot',
+            status: '<span class="badge bg-success text-white" style="font-size: 9px; padding: 4px 6px; background-color: #198754 !important;">RESOLVED</span>',
+            auditorName: 'akhil golu',
+            auditorSch: '#WO-10101',
+            auditorDate: '20.06.2026'
+        },
+        {
+            sl: 2,
+            date: '15.06.2026',
+            trainId: '12952',
+            trainNo: '12952',
+            trainName: 'RAJDHANI EXP',
+            coachType: 'LHB AC 2T',
+            coachNo: 'WR-193425',
+            make: 'Knorr-Bremse',
+            issue: '<strong>Solenoid dump valve timeout</strong><br><span class="text-muted">Axle 1 response failure</span><br><span class="badge bg-warning text-dark" style="font-size: 9px; padding: 2px 4px; font-family: monospace;">ERROR: 1001</span>',
+            rec: 'Start pneumatic self-test, verify track adhesion coefficient, clean dump valve assembly',
+            done: 'Executed pneumatic self-test, cleared dump valve nozzle blockage',
+            status: '<span class="badge bg-success text-white" style="font-size: 9px; padding: 4px 6px; background-color: #198754 !important;">RESOLVED</span>',
+            auditorName: 'akhil golu',
+            auditorSch: '#WO-10102',
+            auditorDate: '13.06.2026'
+        },
+        {
+            sl: 3,
+            date: '15.06.2026',
+            trainId: '12056',
+            trainNo: '12056',
+            trainName: 'JAN SHATABDI',
+            coachType: 'LHB GEN',
+            coachNo: 'NR-142211',
+            make: 'Medha Servo',
+            issue: '<strong>Extension Board EB01A-A2 Fault</strong><br><span class="text-muted">Internal board error</span><br><span class="badge bg-danger" style="font-size: 9px; padding: 2px 4px; font-family: monospace;">ERROR: 0202</span>',
+            rec: 'Check standby power lines, inspect EB01A-A2 card components, change board if necessary',
+            done: 'Awaiting spare Extension Board EB01A-A2 from division depot',
+            status: '<span class="badge bg-warning text-dark" style="font-size: 9px; padding: 4px 6px; background-color: #ffc107 !important;">PENDING</span>',
+            auditorName: 'akhil golu',
+            auditorSch: '#WO-10103',
+            auditorDate: '13.06.2026'
+        },
+        {
+            sl: 4,
+            date: '14.06.2026',
+            trainId: '12260',
+            trainNo: '12260',
+            trainName: 'DURONTO EXP',
+            coachType: 'LHB AC 3T',
+            coachNo: 'ER-202115',
+            make: 'Escorts Ltd',
+            issue: '<strong>Speed Sensor Open/Short circuit</strong><br><span class="text-muted">Axle 1 signal drop detection</span><br><span class="badge bg-warning text-dark" style="font-size: 9px; padding: 2px 4px; font-family: monospace;">ERROR: 1101</span>',
+            rec: 'Check sensor plug connection, measure coil resistance (800-1200 ohms), replace speed sensor',
+            done: 'Cleaned speed sensor connector contacts and refastened plug',
+            status: '<span class="badge bg-success text-white" style="font-size: 9px; padding: 4px 6px; background-color: #198754 !important;">RESOLVED</span>',
+            auditorName: 'akhil golu',
+            auditorSch: '#WO-10104',
+            auditorDate: '13.06.2026'
+        }
+    ];
+
     function generateReport(event) {
         event.preventDefault();
         
@@ -287,74 +332,46 @@
         const start = document.getElementById('startDate').value;
         const end = document.getElementById('endDate').value;
         
-        const titles = {
-            daily: 'Daily Protection Summary',
-            sensor: 'Sensor Calibration & Health Report',
-            valves: 'Wheel Slide Protection Actuation Details',
-            wear: 'Wheel Wear & Flat Spots Diagnostics'
-        };
+        document.getElementById('reportPeriodSpan').textContent = `${start.split('-').reverse().join('.')} - ${end.split('-').reverse().join('.')}`;
         
-        document.getElementById('reportTitleSpan').textContent = titles[type];
-        document.getElementById('reportPeriodSpan').textContent = `Period: ${start} to ${end}`;
-        
-        // Simulating data change in preview table
-        const tbody = document.getElementById('reportTbody');
-        if (type === 'sensor') {
-            tbody.innerHTML = `
-                <tr>
-                    <td><strong>12002 - Shatabdi</strong></td>
-                    <td>CR-223456</td>
-                    <td class="text-center">SR-WSPS-01</td>
-                    <td class="text-center">Axle-1</td>
-                    <td>95.2 km/h</td>
-                    <td>-38 dBm</td>
-                    <td class="text-center">+0.0%</td>
-                    <td class="text-center text-success">ONLINE</td>
-                    <td class="fw-bold text-success">100%</td>
-                </tr>
-                <tr>
-                    <td><strong>12952 - Rajdhani</strong></td>
-                    <td>WR-193425</td>
-                    <td class="text-center">SR-WSPS-24</td>
-                    <td class="text-center">Axle-1</td>
-                    <td>0.0 km/h</td>
-                    <td>-95 dBm</td>
-                    <td class="text-center">0.0%</td>
-                    <td class="text-center text-danger">FAULTY</td>
-                    <td class="fw-bold text-danger">25%</td>
-                </tr>
-            `;
-            actuChart.data.datasets[0].data = [12, 28, 4, 9];
-            actuChart.update();
-        } else {
-            // Restore default
-            tbody.innerHTML = `
-                <tr>
-                    <td><strong>12002 - Shatabdi</strong></td>
-                    <td>CR-223456</td>
-                    <td class="text-center">14</td>
-                    <td class="text-center">56 pulses</td>
-                    <td>12.4 km/h</td>
-                    <td>880 ms</td>
-                    <td class="text-center text-danger fw-bold">1</td>
-                    <td class="text-center">0</td>
-                    <td class="fw-bold text-success">98.5%</td>
-                </tr>
-                <tr>
-                    <td><strong>12952 - Rajdhani</strong></td>
-                    <td>WR-193425</td>
-                    <td class="text-center">28</td>
-                    <td class="text-center">112 pulses</td>
-                    <td>14.1 km/h</td>
-                    <td>1,240 ms</td>
-                    <td class="text-center">0</td>
-                    <td class="text-center text-danger fw-bold">1</td>
-                    <td class="fw-bold text-warning">94.2%</td>
-                </tr>
-            `;
-            actuChart.data.datasets[0].data = [56, 112, 24, 32];
-            actuChart.update();
+        let filteredRows = allReportRows;
+        if (train !== 'all') {
+            filteredRows = allReportRows.filter(row => row.trainId === train);
         }
+        
+        document.getElementById('recordCountSpan').innerHTML = `<i class="bi bi-list-ol"></i> ${filteredRows.length} records`;
+        
+        const tbody = document.getElementById('reportTbody');
+        if (filteredRows.length === 0) {
+            tbody.innerHTML = `
+                <tr>
+                    <td colspan="10" class="text-center text-muted py-4">No records found matching the criteria.</td>
+                </tr>
+            `;
+        } else {
+            tbody.innerHTML = filteredRows.map((row, index) => `
+                <tr>
+                    <td class="text-center fw-bold">${index + 1}</td>
+                    <td class="text-center">${row.date}</td>
+                    <td><strong>${row.trainNo}</strong><br><small class="text-muted" style="font-size:9px;">${row.trainName}</small></td>
+                    <td>TYPE <strong>${row.coachType}</strong><br><small class="text-muted">COACH </small><strong>${row.coachNo}</strong></td>
+                    <td>${row.make}</td>
+                    <td>${row.issue}</td>
+                    <td>${row.rec}</td>
+                    <td>${row.done}</td>
+                    <td class="text-center">${row.status}</td>
+                    <td>
+                        <div style="font-size: 10px; line-height: 1.3;">
+                            <strong>${row.auditorName}</strong><br>
+                            <span class="text-muted">SCH</span> <strong>${row.auditorSch}</strong><br>
+                            <span class="text-muted">${row.auditorDate}</span>
+                        </div>
+                    </td>
+                </tr>
+            `).join('');
+        }
+        
+
         
         alert('Report Generated Successfully!\nPreview updated below.');
     }

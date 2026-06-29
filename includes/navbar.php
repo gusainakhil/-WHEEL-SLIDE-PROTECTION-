@@ -5,7 +5,7 @@
         </button>
         <a href="index.php" class="navbar-brand">
             <i class="bi bi-train-front-fill fs-4 text-white"></i>
-            <span class="d-none d-sm-inline">WHEEL SLIDE PROTECTION SYSTEM (WSPS)</span>
+            <span class="d-none d-sm-inline">WHEEL SLIDE PROTECTION  (WSP)</span>
             <span class="d-inline d-sm-none">WSPS Panel</span>
         </a>
     </div>
