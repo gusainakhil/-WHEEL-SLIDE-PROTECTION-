@@ -36,7 +36,7 @@
     </div>
 
     <!-- Stats Cards -->
-    <div class="stats-grid">
+    <!-- <div class="stats-grid">
         <div class="stat-card">
             <div class="stat-info">
                 <span class="stat-label">Reports Generated</span>
@@ -77,7 +77,7 @@
             </div>
             <div class="stat-icon"><i class="bi bi-cloud-arrow-up"></i></div>
         </div>
-    </div>
+    </div> -->
 
     <!-- Configuration Panel -->
     <div class="content-card no-print">
@@ -145,8 +145,8 @@
                             <th style="width: 130px;">Type & Coach No.</th>
                             <th style="width: 120px;">OEM Make</th>
                             <th>Inventory Issue / Fault & Error Code</th>
-                            <th>What Could Have Been Done (Remedies)</th>
-                            <th>What We Did (Action Taken)</th>
+                            <th>Actually Issue</th>
+                            <th>Action Taken</th>
                             <th style="width: 100px; text-align: center;">Status</th>
                             <th style="width: 130px;">Auditor</th>
                         </tr>

@@ -36,7 +36,7 @@
     </div>
 
     <!-- Stats Cards -->
-    <div class="stats-grid">
+    <!-- <div class="stats-grid">
         <div class="stat-card danger">
             <div class="stat-info">
                 <span class="stat-label">Coaches Overdue Test</span>
@@ -77,7 +77,7 @@
             </div>
             <div class="stat-icon"><i class="bi bi-shield-check"></i></div>
         </div>
-    </div>
+    </div> -->
 
     <div class="row g-3">
         <!-- Create Schedule Form -->

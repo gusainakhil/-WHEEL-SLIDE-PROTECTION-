@@ -82,7 +82,7 @@
         <a href="inspection-schedule.php" class="stat-card warning text-decoration-none">
             <div class="stat-info">
                 <span class="stat-label">Complete Schedule</span>
-                <span class="stat-value text-dark" style="font-size: 18px;">5 Overdue</span>
+                <span class="stat-value text-dark" style="font-size: 18px;">5 Complete</span>
                 <!-- <span class="stat-desc text-danger">Calibration needed</span> -->
             </div>
             <div class="stat-icon"><i class="bi bi-calendar-check"></i></div>
@@ -92,7 +92,7 @@
         <a href="schedule-list.php" class="stat-card warning text-decoration-none">
             <div class="stat-info">
                 <span class="stat-label">Pending Schedule</span>
-                <span class="stat-value text-dark" style="font-size: 18px;">3 In Progress</span>
+                <span class="stat-value text-dark" style="font-size: 18px;">3 In Pending</span>
                 <!-- <span class="stat-desc text-success">Diagnostics active</span> -->
             </div>
             <div class="stat-icon"><i class="bi bi-calendar-range"></i></div>
@@ -101,8 +101,8 @@
         <!-- Active Alarms / Alerts -->
         <a href="alerts.php" class="stat-card danger text-decoration-none">
             <div class="stat-info">
-                <span class="stat-label">Active Alerts</span>
-                <span class="stat-value text-dark" style="font-size: 18px;">3 Alarms</span>
+                <span class="stat-label">Component Ok</span>
+                <span class="stat-value text-dark" style="font-size: 18px;">45</span>
                 <!-- <span class="stat-desc text-danger">1 Critical, 2 Warnings</span> -->
             </div>
             <div class="stat-icon"><i class="bi bi-bell"></i></div>
@@ -111,8 +111,8 @@
         <!-- Wheel Protection Activity -->
         <a href="monitoring.php" class="stat-card danger text-decoration-none">
             <div class="stat-info">
-                <span class="stat-label">Wheel Protection</span>
-                <span class="stat-value text-dark" style="font-size: 18px;">12 Solenoids Active</span>
+                <span class="stat-label">Total Components</span>
+                <span class="stat-value text-dark" style="font-size: 18px;">14</span>
                 <!-- <span class="stat-desc text-warning">Dumping valve pulses</span> -->
             </div>
             <div class="stat-icon"><i class="bi bi-wind"></i></div>
@@ -121,8 +121,8 @@
         <!-- Speed Sensors Grid -->
         <a href="sensors.php" class="stat-card success text-decoration-none">
             <div class="stat-info">
-                <span class="stat-label">Speed Sensors</span>
-                <span class="stat-value text-dark" style="font-size: 18px;">2,176 Grid</span>
+                <span class="stat-label">Total Sensors</span>
+                <span class="stat-value text-dark" style="font-size: 18px;">2,176</span>
                 <!-- <span class="stat-desc text-success">2,170 Online | 6 Offline</span> -->
             </div>
             <div class="stat-icon"><i class="bi bi-broadcast-pin"></i></div>
@@ -152,10 +152,63 @@
         <a href="inventory.php" class="stat-card secondary text-decoration-none">
             <div class="stat-info">
                 <span class="stat-label">Used Inventory</span>
-                <span class="stat-value text-dark" style="font-size: 18px;">45 Units Deployed</span>
-                <!-- <span class="stat-desc text-muted">Spares consumption logs</span> -->
+                <span class="stat-value text-dark" style="font-size: 18px;">45 Units </span>
             </div>
             <div class="stat-icon"><i class="bi bi-clipboard-check"></i></div>
+        </a>
+
+        <!-- Total OEM Makes -->
+        <a href="manufacturers.php" class="stat-card secondary text-decoration-none">
+            <div class="stat-info">
+                <span class="stat-label">Total OEM Makes</span>
+                <span class="stat-value text-dark" style="font-size: 18px;">5 OEMs</span>
+            </div>
+            <div class="stat-icon"><i class="bi bi-building"></i></div>
+        </a>
+
+        <!-- Warranty Claimed -->
+        <a href="reports.php" class="stat-card success text-decoration-none">
+            <div class="stat-info">
+                <span class="stat-label">Warranty Claimed</span>
+                <span class="stat-value text-dark" style="font-size: 18px;">18 Claims</span>
+            </div>
+            <div class="stat-icon text-success"><i class="bi bi-shield-check"></i></div>
+        </a>
+
+        <!-- Under Warranty -->
+        <a href="inventory.php" class="stat-card success text-decoration-none">
+            <div class="stat-info">
+                <span class="stat-label">Under Warranty</span>
+                <span class="stat-value text-dark" style="font-size: 18px;">142 Spares</span>
+            </div>
+            <div class="stat-icon text-success"><i class="bi bi-shield-lock"></i></div>
+        </a>
+
+        <!-- Total Defects / Broken -->
+        <a href="error-codes.php" class="stat-card danger text-decoration-none">
+            <div class="stat-info">
+                <span class="stat-label">Total Defects / Broken</span>
+                <span class="stat-value text-dark" style="font-size: 18px;">8 Faults Active</span>
+            </div>
+            <div class="stat-icon text-danger"><i class="bi bi-tools"></i></div>
+        </a>
+
+        <!-- Detached Coaches -->
+        <a href="coaches.php" class="stat-card danger text-decoration-none">
+            <div class="stat-info">
+                <span class="stat-label">Detached Coaches</span>
+                <span class="stat-value text-dark" style="font-size: 18px;">4 Coaches</span>
+            </div>
+            <div class="stat-icon text-danger"><i class="bi bi-journal-x"></i></div>
+        </a>
+
+        <!-- In-Service / Intact Coaches -->
+        <a href="coaches.php" class="stat-card success text-decoration-none">
+            <div class="stat-info">
+                <span class="stat-label">In-Service Coaches</span>
+                <span class="stat-value text-dark" style="font-size: 18px;">540 Coaches</span>
+            </div>
+            <div class="stat-icon text-success"><i class="bi bi-journal-check"></i></div>
         </a>
     </div>
 
@@ -176,15 +229,51 @@
             </div>
         </div>
 
-        <!-- System Summary Cards -->
+        <!-- WSP Spares Inventory Widget -->
         <div class="col-lg-4">
             <div class="content-card">
-                <div class="card-header">
-                    <h5><i class="bi bi-pie-chart"></i> Coach WSp Quality</h5>
+                <div class="card-header d-flex justify-content-between align-items-center">
+                    <h5><i class="bi bi-boxes"></i> Used vs Unused Inventory</h5>
+                    <a href="inventory.php" class="btn btn-wsps btn-wsps-xs btn-wsps-secondary text-decoration-none no-print" style="font-size: 9px; padding: 2px 6px;">Ledger <i class="bi bi-arrow-right"></i></a>
                 </div>
-                <div class="card-body">
-                    <div style="height: 235px; position: relative;">
-                        <canvas id="signalQualityChart"></canvas>
+                <div class="card-body p-0">
+                    <div class="table-responsive-custom" style="max-height: 235px; overflow-y: auto;">
+                        <table class="table-custom mb-0" style="font-size: 11px;">
+                            <thead>
+                                <tr style="background-color: #f8f9fa;">
+                                    <th>Spares Description</th>
+                                    <th class="text-center" style="width: 100px;">Used (Deployed)</th>
+                                    <th class="text-center" style="width: 100px;">Unused (In Stock)</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>Main Processor Card</strong><br><span class="text-muted" style="font-size: 9px;">Processor Cards</span></td>
+                                    <td class="text-center"><span class="badge bg-secondary text-white" style="font-size: 9px; padding: 3px 6px;">45 Deployed</span></td>
+                                    <td class="text-center"><span class="badge bg-success text-white" style="font-size: 9px; padding: 3px 6px; background-color: #198754 !important;">5 Available</span></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Solenoid Dump Valve</strong><br><span class="text-muted" style="font-size: 9px;">Pneumatic Valves</span></td>
+                                    <td class="text-center"><span class="badge bg-secondary text-white" style="font-size: 9px; padding: 3px 6px;">198 Deployed</span></td>
+                                    <td class="text-center"><span class="badge bg-warning text-dark" style="font-size: 9px; padding: 3px 6px; background-color: #ffc107 !important;">2 Low Stock</span></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Speed Sensor Probe</strong><br><span class="text-muted" style="font-size: 9px;">Sensing Probes</span></td>
+                                    <td class="text-center"><span class="badge bg-secondary text-white" style="font-size: 9px; padding: 3px 6px;">1,940 Deployed</span></td>
+                                    <td class="text-center"><span class="badge bg-success text-white" style="font-size: 9px; padding: 3px 6px; background-color: #198754 !important;">12 Available</span></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Junction Box JB-02</strong><br><span class="text-muted" style="font-size: 9px;">Bogie Junctions</span></td>
+                                    <td class="text-center"><span class="badge bg-secondary text-white" style="font-size: 9px; padding: 3px 6px;">200 Deployed</span></td>
+                                    <td class="text-center"><span class="badge bg-danger text-white" style="font-size: 9px; padding: 3px 6px; background-color: #dc3545 !important;">0 Out of Stock</span></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Extension Board EB-01A</strong><br><span class="text-muted" style="font-size: 9px;">Processor Cards</span></td>
+                                    <td class="text-center"><span class="badge bg-secondary text-white" style="font-size: 9px; padding: 3px 6px;">42 Deployed</span></td>
+                                    <td class="text-center"><span class="badge bg-success text-white" style="font-size: 9px; padding: 3px 6px; background-color: #198754 !important;">3 Available</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
                 </div>
             </div>
@@ -192,104 +281,85 @@
     </div>
 
     <div class="row g-3 mt-1">
-        <!-- Live Alerts Table -->
+        <!-- Recent 5 Inspections Table -->
         <div class="col-lg-12">
             <div class="content-card">
                 <div class="card-header d-flex justify-content-between align-items-center flex-wrap gap-2">
-                    <h5><i class="bi bi-exclamation-triangle-fill text-warning"></i> Live Slip Alert Monitoring Panel</h5>
+                    <h5><i class="bi bi-shield-check text-success"></i> Recent 5 Inspections</h5>
                     <div class="d-flex gap-2 no-print">
-                        <input type="text" id="alertSearchInput" class="form-control-custom" placeholder="Search Live Alerts..." style="width: 200px;">
-                        <select id="severityFilter" class="form-control-custom" style="width: 130px;">
-                            <option value="">All Severities</option>
-                            <option value="CRITICAL">Critical</option>
-                            <option value="WARNING">Warning</option>
-                            <option value="RESOLVED">Resolved</option>
+                        <input type="text" id="inspSearchInput" class="form-control-custom" placeholder="Search Inspections..." style="width: 200px;">
+                        <select id="statusFilter" class="form-control-custom" style="width: 160px;">
+                            <option value="">All Statuses</option>
+                            <option value="Passed">Passed</option>
+                            <option value="Attention Required">Attention Required</option>
                         </select>
                     </div>
                 </div>
                 <div class="card-body p-0">
                     <div class="table-responsive-custom">
-                        <table class="table-custom" id="liveAlertsTable">
+                        <table class="table-custom" id="recentInspectionsTable">
                             <thead>
                                 <tr>
-                                    <th>Alert ID</th>
-                                    <th>Train No</th>
+                                    <th>Inspection ID</th>
+                                    <th>Date & Time</th>
+                                    <th>Train No / Name</th>
                                     <th>Coach No</th>
-                                    <th>Wheel No</th>
-                                    <th>Axle No</th>
-                                    <th>Sensor ID</th>
-                                    <th>Division</th>
-                                    <th>Alert Level</th>
-                                    <th>Status</th>
-                                    <th>Speed Diff</th>
-                                    <th>Date Time</th>
+                                    <th>Inspection Type</th>
+                                    <th>Inspected By</th>
+                                    <th>Status/Result</th>
+                                    <th>Remarks / Actions Taken</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr class="table-row-alert">
-                                    <td><strong>#ALT-9920</strong></td>
+                                <tr>
+                                    <td><strong>#INSP-3041</strong></td>
+                                    <td>29-Jun-2026 16:45</td>
                                     <td>12002 - Shatabdi Exp</td>
                                     <td>CR-223456 (AC)</td>
-                                    <td>W-3</td>
-                                    <td>Axle-2</td>
-                                    <td>SR-WSPS-09</td>
-                                    <td>Firozpur (FZR)</td>
-                                    <td><span class="badge-custom badge-danger">CRITICAL</span></td>
-                                    <td><span class="badge-custom badge-danger"><i class="bi bi-shield-fill-exclamation"></i> Dumping Active</span></td>
-                                    <td class="text-danger fw-bold">22 km/h</td>
-                                    <td>25-Jun-2026 14:55:03</td>
+                                    <td>Solenoid Actuation Test</td>
+                                    <td>akhil golu</td>
+                                    <td><span class="badge-custom badge-success">Passed</span></td>
+                                    <td>Tested dump valve firing. Adhesion coefficient normal.</td>
                                 </tr>
-                                <tr class="table-row-alert">
-                                    <td><strong>#ALT-9918</strong></td>
+                                <tr>
+                                    <td><strong>#INSP-3040</strong></td>
+                                    <td>28-Jun-2026 11:30</td>
                                     <td>12952 - Mumbai Rajdhani</td>
                                     <td>WR-193425 (AC)</td>
-                                    <td>W-1</td>
-                                    <td>Axle-1</td>
-                                    <td>SR-WSPS-24</td>
-                                    <td>Kota (KOTA)</td>
-                                    <td><span class="badge-custom badge-warning">WARNING</span></td>
-                                    <td><span class="badge-custom badge-warning"><i class="bi bi-activity"></i> Slip Detected</span></td>
-                                    <td class="text-warning fw-bold">11 km/h</td>
-                                    <td>25-Jun-2026 14:52:12</td>
+                                    <td>Speed Sensor Calibration</td>
+                                    <td>beatle team</td>
+                                    <td><span class="badge-custom badge-success">Passed</span></td>
+                                    <td>Sensor coil resistance verified (1050 ohms).</td>
                                 </tr>
                                 <tr>
-                                    <td><strong>#ALT-9915</strong></td>
+                                    <td><strong>#INSP-3039</strong></td>
+                                    <td>27-Jun-2026 09:15</td>
                                     <td>12056 - Dehradun Jan Shatabdi</td>
                                     <td>NR-142211 (Gen)</td>
-                                    <td>W-4</td>
-                                    <td>Axle-2</td>
-                                    <td>SR-WSPS-15</td>
-                                    <td>Delhi (DLI)</td>
-                                    <td><span class="badge-custom badge-warning">WARNING</span></td>
-                                    <td><span class="badge-custom badge-warning"><i class="bi bi-activity"></i> Slip Detected</span></td>
-                                    <td class="text-warning fw-bold">9 km/h</td>
-                                    <td>25-Jun-2026 14:48:50</td>
+                                    <td>Main Board Diagnostic</td>
+                                    <td>akhil golu</td>
+                                    <td><span class="badge-custom badge-danger">Attention Required</span></td>
+                                    <td>Extension board EB01A-A2 has communication lag.</td>
                                 </tr>
                                 <tr>
-                                    <td><strong>#ALT-9910</strong></td>
+                                    <td><strong>#INSP-3038</strong></td>
+                                    <td>26-Jun-2026 15:20</td>
                                     <td>12260 - Sealdah Duronto</td>
                                     <td>ER-202115 (3A)</td>
-                                    <td>W-2</td>
-                                    <td>Axle-1</td>
-                                    <td>SR-WSPS-45</td>
-                                    <td>Sealdah (SDAH)</td>
-                                    <td><span class="badge-custom badge-success">RESOLVED</span></td>
-                                    <td><span class="badge-custom badge-success"><i class="bi bi-check-circle-fill"></i> Normal (Auto-Protected)</span></td>
-                                    <td>1.2 km/h</td>
-                                    <td>25-Jun-2026 14:32:00</td>
+                                    <td>Bogie Cabling Check</td>
+                                    <td>beatle team</td>
+                                    <td><span class="badge-custom badge-success">Passed</span></td>
+                                    <td>Re-insulated speed sensor plug connection.</td>
                                 </tr>
                                 <tr>
-                                    <td><strong>#ALT-9904</strong></td>
+                                    <td><strong>#INSP-3037</strong></td>
+                                    <td>25-Jun-2026 10:10</td>
                                     <td>12626 - Kerala Express</td>
                                     <td>SR-181123 (SL)</td>
-                                    <td>W-3</td>
-                                    <td>Axle-2</td>
-                                    <td>SR-WSPS-08</td>
-                                    <td>Thiruvananthapuram (TVC)</td>
-                                    <td><span class="badge-custom badge-success">RESOLVED</span></td>
-                                    <td><span class="badge-custom badge-success"><i class="bi bi-check-circle-fill"></i> Normal (Dump Clear)</span></td>
-                                    <td>0.5 km/h</td>
-                                    <td>25-Jun-2026 13:14:22</td>
+                                    <td>Routine Trip Inspection</td>
+                                    <td>akhil golu</td>
+                                    <td><span class="badge-custom badge-success">Passed</span></td>
+                                    <td>WSP system check normal. No display errors.</td>
                                 </tr>
                             </tbody>
                         </table>
@@ -353,41 +423,18 @@
         }
     });
 
-    // 2. Signal Quality Pie Chart
-    const signalQualityCtx = document.getElementById('signalQualityChart').getContext('2d');
-    new Chart(signalQualityCtx, {
-        type: 'doughnut',
-        data: {
-            labels: ['Excellent ( > 55dB)', 'Good ( 40-55dB)', 'Degraded ( 20-40dB)', 'Faulty ( < 20dB)'],
-            datasets: [{
-                data: [498, 38, 6, 2],
-                backgroundColor: ['#198754', '#2F6DA6', '#FFC107', '#DC3545'],
-                borderWidth: 1
-            }]
-        },
-        options: {
-            responsive: true,
-            maintainAspectRatio: false,
-            plugins: {
-                legend: {
-                    position: 'bottom',
-                    labels: { boxWidth: 12, font: { family: 'Inter', size: 10 } }
-                }
-            },
-            cutout: '65%'
-        }
-    });
 
-    // 3. Live search and filtering implementation
-    searchTable('alertSearchInput', 'liveAlertsTable');
 
-    const severityFilter = document.getElementById('severityFilter');
-    if (severityFilter) {
-        severityFilter.addEventListener('change', function() {
-            const val = severityFilter.value;
-            const rows = document.querySelectorAll('#liveAlertsTable tbody tr');
+    // 3. Live search and filtering implementation for Recent Inspections
+    searchTable('inspSearchInput', 'recentInspectionsTable');
+
+    const statusFilter = document.getElementById('statusFilter');
+    if (statusFilter) {
+        statusFilter.addEventListener('change', function() {
+            const val = statusFilter.value;
+            const rows = document.querySelectorAll('#recentInspectionsTable tbody tr');
             rows.forEach(row => {
-                const cell = row.querySelector('td:nth-child(8) .badge-custom');
+                const cell = row.querySelector('td:nth-child(7) .badge-custom');
                 if (!cell) return;
                 const matches = val === "" || cell.textContent.trim() === val;
                 row.style.display = matches ? "" : "none";

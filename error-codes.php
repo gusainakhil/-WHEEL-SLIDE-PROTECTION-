@@ -35,7 +35,7 @@
     </div>
 
     <!-- Stats Cards -->
-    <div class="stats-grid">
+    <!-- <div class="stats-grid">
         <div class="stat-card">
             <div class="stat-info">
                 <span class="stat-label">Total Error Codes</span>
@@ -76,7 +76,7 @@
             </div>
             <div class="stat-icon"><i class="bi bi-arrow-repeat"></i></div>
         </div>
-    </div>
+    </div> -->
 
     <!-- Filter & Search Panel -->
     <div class="content-card no-print">
