@@ -145,7 +145,7 @@
                             <th style="width: 130px;">Type & Coach No.</th>
                             <th style="width: 120px;">OEM Make</th>
                             <th>Inventory Issue / Fault & Error Code</th>
-                            <th>Actually Issue</th>
+                            <th>Actual Issue</th>
                             <th>Action Taken</th>
                             <th style="width: 100px; text-align: center;">Status</th>
                             <th style="width: 130px;">Auditor</th>
