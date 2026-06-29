@@ -41,9 +41,9 @@
         <!-- Monitored Trains -->
         <a href="trains.php" class="stat-card text-decoration-none">
             <div class="stat-info">
-                <span class="stat-label">Monitored Trains</span>
+                <span class="stat-label">Total Trains</span>
                 <span class="stat-value text-dark" style="font-size: 18px;">52 Trains</span>
-                <span class="stat-desc text-success"><i class="bi bi-wifi"></i> 18 Live Telemetry</span>
+                <!-- <span class="stat-desc text-success"><i class="bi bi-wifi"></i> 18 Live Telemetry</span> -->
             </div>
             <div class="stat-icon"><i class="bi bi-train-front"></i></div>
         </a>
@@ -51,9 +51,9 @@
         <!-- Coach Monitoring -->
         <a href="coaches.php" class="stat-card success text-decoration-none">
             <div class="stat-info">
-                <span class="stat-label">Monitored Coaches</span>
+                <span class="stat-label">ToTal Coaches</span>
                 <span class="stat-value text-dark" style="font-size: 18px;">544 Coaches</span>
-                <span class="stat-desc">420 LHB | 124 ICF</span>
+                <!-- <span class="stat-desc">420 LHB | 124 ICF</span> -->
             </div>
             <div class="stat-icon text-success"><i class="bi bi-box-seam"></i></div>
         </a>
@@ -62,8 +62,8 @@
         <a href="inventory.php" class="stat-card secondary text-decoration-none">
             <div class="stat-info">
                 <span class="stat-label">Depot Inventory</span>
-                <span class="stat-value text-dark" style="font-size: 18px;">182 Items</span>
-                <span class="stat-desc">₹24,500 Valuation</span>
+                <span class="stat-value text-dark" style="font-size: 18px;">982 Items</span>
+                <!-- <span class="stat-desc">₹24,500 Valuation</span> -->
             </div>
             <div class="stat-icon"><i class="bi bi-boxes"></i></div>
         </a>
@@ -73,7 +73,7 @@
             <div class="stat-info">
                 <span class="stat-label">MMI Error Codes</span>
                 <span class="stat-value text-dark" style="font-size: 18px;">42 Event Codes</span>
-                <span class="stat-desc">MB04B & EB01A spares</span>
+                <!-- <span class="stat-desc">MB04B & EB01A spares</span> -->
             </div>
             <div class="stat-icon"><i class="bi bi-bug"></i></div>
         </a>
@@ -81,9 +81,9 @@
         <!-- Create Schedule -->
         <a href="inspection-schedule.php" class="stat-card warning text-decoration-none">
             <div class="stat-info">
-                <span class="stat-label">Pending Schedule</span>
+                <span class="stat-label">Complete Schedule</span>
                 <span class="stat-value text-dark" style="font-size: 18px;">5 Overdue</span>
-                <span class="stat-desc text-danger">Calibration needed</span>
+                <!-- <span class="stat-desc text-danger">Calibration needed</span> -->
             </div>
             <div class="stat-icon"><i class="bi bi-calendar-check"></i></div>
         </a>
@@ -91,9 +91,9 @@
         <!-- Active Schedules -->
         <a href="schedule-list.php" class="stat-card warning text-decoration-none">
             <div class="stat-info">
-                <span class="stat-label">Active Schedule</span>
+                <span class="stat-label">Pending Schedule</span>
                 <span class="stat-value text-dark" style="font-size: 18px;">3 In Progress</span>
-                <span class="stat-desc text-success">Diagnostics active</span>
+                <!-- <span class="stat-desc text-success">Diagnostics active</span> -->
             </div>
             <div class="stat-icon"><i class="bi bi-calendar-range"></i></div>
         </a>
@@ -103,7 +103,7 @@
             <div class="stat-info">
                 <span class="stat-label">Active Alerts</span>
                 <span class="stat-value text-dark" style="font-size: 18px;">3 Alarms</span>
-                <span class="stat-desc text-danger">1 Critical, 2 Warnings</span>
+                <!-- <span class="stat-desc text-danger">1 Critical, 2 Warnings</span> -->
             </div>
             <div class="stat-icon"><i class="bi bi-bell"></i></div>
         </a>
@@ -113,7 +113,7 @@
             <div class="stat-info">
                 <span class="stat-label">Wheel Protection</span>
                 <span class="stat-value text-dark" style="font-size: 18px;">12 Solenoids Active</span>
-                <span class="stat-desc text-warning">Dumping valve pulses</span>
+                <!-- <span class="stat-desc text-warning">Dumping valve pulses</span> -->
             </div>
             <div class="stat-icon"><i class="bi bi-wind"></i></div>
         </a>
@@ -123,7 +123,7 @@
             <div class="stat-info">
                 <span class="stat-label">Speed Sensors</span>
                 <span class="stat-value text-dark" style="font-size: 18px;">2,176 Grid</span>
-                <span class="stat-desc text-success">2,170 Online | 6 Offline</span>
+                <!-- <span class="stat-desc text-success">2,170 Online | 6 Offline</span> -->
             </div>
             <div class="stat-icon"><i class="bi bi-broadcast-pin"></i></div>
         </a>
@@ -133,7 +133,7 @@
             <div class="stat-info">
                 <span class="stat-label">Authorized Users</span>
                 <span class="stat-value text-dark" style="font-size: 18px;">14 Accounts</span>
-                <span class="stat-desc text-success">3 Active Session logs</span>
+                <!-- <span class="stat-desc text-success">3 Active Session logs</span> -->
             </div>
             <div class="stat-icon"><i class="bi bi-people"></i></div>
         </a>
@@ -143,7 +143,7 @@
             <div class="stat-info">
                 <span class="stat-label">Subscription Status</span>
                 <span class="stat-value text-dark" style="font-size: 18px;">30 Days Pending</span>
-                <span class="stat-desc text-danger"><i class="bi bi-exclamation-triangle"></i> Renew license soon</span>
+                <!-- <span class="stat-desc text-danger"><i class="bi bi-exclamation-triangle"></i> Renew license soon</span> -->
             </div>
             <div class="stat-icon text-warning"><i class="bi bi-credit-card"></i></div>
         </a>
@@ -153,7 +153,7 @@
             <div class="stat-info">
                 <span class="stat-label">Used Inventory</span>
                 <span class="stat-value text-dark" style="font-size: 18px;">45 Units Deployed</span>
-                <span class="stat-desc text-muted">Spares consumption logs</span>
+                <!-- <span class="stat-desc text-muted">Spares consumption logs</span> -->
             </div>
             <div class="stat-icon"><i class="bi bi-clipboard-check"></i></div>
         </a>
@@ -180,7 +180,7 @@
         <div class="col-lg-4">
             <div class="content-card">
                 <div class="card-header">
-                    <h5><i class="bi bi-pie-chart"></i> Sensor Signal Quality</h5>
+                    <h5><i class="bi bi-pie-chart"></i> Coach WSp Quality</h5>
                 </div>
                 <div class="card-body">
                     <div style="height: 235px; position: relative;">
